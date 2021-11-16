@@ -50,11 +50,25 @@ GO
 
 ## Insert some test data:
 
+```
 SET IDENTITY_INSERT Asset ON;
 INSERT INTO Asset	(AssetId)
 	VALUES (1), (2)
 
 GO
 SET IDENTITY_INSERT Asset ON;
+
+DECLARE @rows int = 1000, @i int = 1
+
+WHILE @i < @rows
+BEGIN
+	INSERT INTO MonitoringLog (LogUTCDateTime, OtherProperty, AssetId)
+		VALUES
+		(GetDate(), 'hello world', 1),
+		(GetDate(), 'hello world', 2)
+
+	SET @i = @i + 1;
+END
+```
 
 
