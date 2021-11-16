@@ -46,3 +46,15 @@ ALTER TABLE [dbo].[MonitoringLog] CHECK CONSTRAINT [FK_MonitoringLog_Asset]
 GO
 
 ```
+
+
+## Insert some test data:
+
+SET IDENTITY_INSERT Asset ON;
+INSERT INTO Asset	(AssetId)
+	VALUES (1), (2)
+
+GO
+SET IDENTITY_INSERT Asset ON;
+
+
